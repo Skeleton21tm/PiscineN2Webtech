@@ -15,24 +15,26 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand {% if request.path == 'home' %}active{% endif %}" href="{% url 'home' %}">Foot blog</a>
                 
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">contacts</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'mon_repertoire' %}">blog</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">contacts</a>
+                </li>
+                
             </ul>
            
         </div>
     </nav>
 </header>
-
+<br>
 {% block content %}
 
 {% endblock %}
-
+<br>
 <footer class="page-footer font-small blue">
     <div class="footer-copyright text-center py-3">
         © {% now "Y" %} Copyright:
