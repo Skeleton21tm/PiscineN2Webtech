@@ -8,7 +8,7 @@ def repertoire(request):
     context = {
         'articles': articles,
         'title': title,
-        'name': 'TOUS FOU DE FOOT ET FUCK LES FEMMES'
+        'name': 'TOUS FOU DE FOOT '
     }
     return render(request, 'blog/repertoire.html',context)
 
