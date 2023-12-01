@@ -1,17 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import ContactForm
+from .models import Contact
 
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            ContactForm.objects.create(**form.cleaned_data)
+            Contact.objects.create(**form.cleaned_data)
 
-            # Process contact form data here
-
-            return redirect('liste_contact')
         else:
-            form = ContactForm()
+            print('il manque quelque chose ptit con')
     else:
         form = ContactForm()
 
