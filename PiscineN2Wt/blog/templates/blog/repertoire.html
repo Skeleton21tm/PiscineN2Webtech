@@ -6,6 +6,8 @@
     <title>Document</title>
   </head>
   <body>
+    {% extends "base.html"%}
+    {% block content %}
     <h1>{{title}}</h1>
     <p> Votre repertoire est compose de {{articles|length}} articles</p>
     {{name}}
@@ -22,5 +24,6 @@
 
       {% endif%}
     </ul>
+    {% endblock %}
   </body>
 </html>
