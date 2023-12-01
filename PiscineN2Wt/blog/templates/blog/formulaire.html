@@ -1,0 +1,7 @@
+<form action="" method="post">
+    {% csrf_token %} 
+    <p>{{ formulaire.as_p }}</p>
+
+    <button>Soumettre mon article</button>
+</form>
+{{message}}

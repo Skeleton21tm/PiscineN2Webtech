@@ -1,0 +1,12 @@
+{% extends "principal.html"%}
+{% block content %}
+    {% if article %} 
+        <h1>{{article.title}}</h1><br>
+        <br>    
+        <p>{{article.content}}</p><br>
+            
+
+    {% else %} 
+    <p> Pas d'article</p>
+    {% endif %} 
+{% endblock %}

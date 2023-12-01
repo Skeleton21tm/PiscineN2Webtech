@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <p> Votre repertoire est compose de {{articles|length}} articles</p>
+    {{name}}
+
+    <ul>
+      {% if articles %} 
+
+        {% for article in articles%}
+            <li><a href="{% url 'mon_article' article.id %}">{{article}}</a></li>
+        {% endfor%}
+
+      {% else %}
+      <p>Pas d'articles</p>
+
+      {% endif%}
+    </ul>
+  </body>
+</html>
