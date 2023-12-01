@@ -1,16 +1,9 @@
 from django.shortcuts import render
-from .models import Article
-from .forms import RechercheForm
+import datetime
 
-def recherche_articles(request):
-    if request.method == 'GET':
-        form = RechercheForm(request.GET)
-        if form.is_valid():
-            terme_recherche = form.cleaned_data['recherche']
-            articles = Article.objects.filter(titre__icontains=terme_recherche)
-            return render(request, 'home/recherche.html', {'articles': articles, 'form': form})
-    else:
-        form = RechercheForm()
+def home(request):
+    current_year = datetime.datetime.now().year
+    return render(request, 'home/home.html', {'current_year': current_year})
 
-    return render(request, 'home/recherche.html', {'form': form})
+
 
